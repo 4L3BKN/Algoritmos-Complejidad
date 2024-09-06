@@ -1,0 +1,4 @@
+MergeSort tiempo de ordenamiento 84479 microsegundos frente a un arreglo de largo 100000
+MergeSort tiempo de ordenamiento 210539 microsegundos frente a un arreglo de largo 250000
+MergeSort tiempo de ordenamiento 429599 microsegundos frente a un arreglo de largo 500000
+MergeSort tiempo de ordenamiento 896853 microsegundos frente a un arreglo de largo 1000000
