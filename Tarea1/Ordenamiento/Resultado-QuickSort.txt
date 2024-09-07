@@ -1,4 +1,0 @@
-QuickSort tiempo de ordenamiento 19991 microsegundos frente a un arreglo de largo 100000
-QuickSort tiempo de ordenamiento 66281 microsegundos frente a un arreglo de largo 250000
-QuickSort tiempo de ordenamiento 185488 microsegundos frente a un arreglo de largo 500000
-QuickSort tiempo de ordenamiento 585213 microsegundos frente a un arreglo de largo 1000000
