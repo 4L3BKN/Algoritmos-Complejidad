@@ -1,4 +1,0 @@
-Multiplicación tradicional con matriz transpuesta tiempo de multiplicación 196876 microsegundos frente a una matriz de tamaño 256x256
-Multiplicación tradicional con matriz transpuesta tiempo de multiplicación 1452398 microsegundos frente a una matriz de tamaño 512x512
-Multiplicación tradicional con matriz transpuesta tiempo de multiplicación 11762113 microsegundos frente a una matriz de tamaño 1024x1024
-Multiplicación tradicional con matriz transpuesta tiempo de multiplicación 95240057 microsegundos frente a una matriz de tamaño 2048x2048
