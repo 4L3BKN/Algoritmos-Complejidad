@@ -1,4 +1,0 @@
-* https://runestone.academy/ns/books/published/cppds/Sort/TheMergeSort.html
-* https://www.geeksforgeeks.org/cpp-program-for-quicksort/
-* https://www.javatpoint.com/matrix-multiplication-in-cpp
-* https://www.geeksforgeeks.org/strassens-matrix-multiplication/
