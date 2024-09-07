@@ -4,23 +4,22 @@
 using namespace std;
 
 int main() {
-    srand(static_cast<unsigned int>(time(0)));  // Semilla para números aleatorios
+    srand(static_cast<unsigned int>(time(0)));
 
     int numMatrices = 2;
     int matrixSize;
 
-    // Pedir al usuario el número de matrices y el tamaño de cada matriz
     cout << "Ingrese el tamaño de las matrices cuadradas: ";
     cin >> matrixSize;
 
     vector<vector<vector<int>>> matrices;
 
-    // Generar matrices aleatorias
+    //Generar matrices aleatorias
     for (int i = 0; i < numMatrices; ++i) {
         matrices.push_back(generateRandomSquareMatrix(matrixSize));
     }
 
-    // Guardar matrices en el archivo
+    //Guardar matrices en el archivo
     string filename;
     filename = "RandomMatrix-";
     filename += to_string(matrixSize);
