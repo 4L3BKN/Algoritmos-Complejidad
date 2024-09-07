@@ -1,4 +1,0 @@
-Sort tiempo de ordenamiento 20302 microsegundos frente a un arreglo de largo 100000
-Sort tiempo de ordenamiento 53159 microsegundos frente a un arreglo de largo 250000
-Sort tiempo de ordenamiento 109870 microsegundos frente a un arreglo de largo 500000
-Sort tiempo de ordenamiento 224894 microsegundos frente a un arreglo de largo 1000000
