@@ -5,6 +5,9 @@
 using namespace std;
 using namespace std::chrono;
 
+
+//La mayor parte del codigo fue hecha con ayuda de chatgpt
+
 // Función para dividir la matriz en submatrices
 void splitMatrix(const vector<vector<int>>& matrix, vector<vector<int>>& A, vector<vector<int>>& B, vector<vector<int>>& C, vector<vector<int>>& D) {
     int n = matrix.size() / 2;

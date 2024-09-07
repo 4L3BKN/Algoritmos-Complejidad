@@ -2,11 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <cstdlib>  // Para rand() y srand()
-#include <ctime>    // Para time()
+#include <cstdlib>  
+#include <ctime>    
 
 using namespace std;
 
+//Función que genera las matrices y sus valores.
 vector<vector<int>> generateRandomSquareMatrix(int size) {
     vector<vector<int>> matrix(size, vector<int>(size));
     for (int i = 0; i < size; ++i) {
@@ -17,6 +18,7 @@ vector<vector<int>> generateRandomSquareMatrix(int size) {
     return matrix;
 }
 
+//Función que guarda las matrices en un archivo de texto.
 void saveMatricesToFile(const vector<vector<vector<int>>>& matrices, const string& filename) {
     ofstream file(filename);
     if (!file.is_open()) {
@@ -24,16 +26,16 @@ void saveMatricesToFile(const vector<vector<vector<int>>>& matrices, const strin
         return;
     }
 
-    // Escribir el número de matrices
+    //Escribe el número de matrices
     file << matrices.size() << endl;
 
     for (const auto& matrix : matrices) {
-        int size = matrix.size();  // Para matrices cuadradas, filas = columnas
+        int size = matrix.size();  //Para matrices cuadradas, filas = columnas
 
-        // Escribir las dimensiones de la matriz
+        //Escribe las dimensiones de la matriz
         file << size << " " << size << endl;
 
-        // Escribir los elementos de la matriz
+        //Escribe los elementos de la matriz
         for (const auto& row : matrix) {
             for (const auto& element : row) {
                 file << element << " ";
@@ -46,6 +48,8 @@ void saveMatricesToFile(const vector<vector<vector<int>>>& matrices, const strin
     cout << "Matrices guardadas exitosamente en el archivo " << filename << "." << endl;
 }
 
+
+//Funcion que lee las matrices desde un archivo de texto.
 vector<vector<vector<int>>> readMatricesFromFile(const string& filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -60,7 +64,7 @@ vector<vector<vector<int>>> readMatricesFromFile(const string& filename) {
 
     for (int i = 0; i < numMatrices; ++i) {
         int size;
-        file >> size >> size;  // Leer las dimensiones de la matriz (filas = columnas)
+        file >> size >> size; 
 
         vector<vector<int>> matrix(size, vector<int>(size));
 
@@ -77,7 +81,7 @@ vector<vector<vector<int>>> readMatricesFromFile(const string& filename) {
     return matrices;
 }
 
-// Función para transponer una matriz cuadrada
+//Función para transponer una matriz cuadrada (Ayuda de chatgpt)
 vector<vector<int>> transposeMatrix(const vector<vector<int>>& matrix) {
     int size = matrix.size();
     vector<vector<int>> transposed(size, vector<int>(size, 0));
