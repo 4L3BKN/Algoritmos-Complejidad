@@ -1,0 +1,4 @@
+Multiplicación tradicional tiempo de multiplicación 134227 microsegundos frente a una matriz de tamaño 256x256
+Multiplicación tradicional tiempo de multiplicación 1098027 microsegundos frente a una matriz de tamaño 512x512
+Multiplicación tradicional tiempo de multiplicación 8856479 microsegundos frente a una matriz de tamaño 1024x1024
+Multiplicación tradicional tiempo de multiplicación 74095858 microsegundos frente a una matriz de tamaño 2048x2048
