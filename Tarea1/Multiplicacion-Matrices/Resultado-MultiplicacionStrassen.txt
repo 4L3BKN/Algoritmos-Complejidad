@@ -1,0 +1,4 @@
+Multiplicación con algoritmo Strassen tiempo de multiplicación 12908130 microsegundos frente a una matriz de tamaño 256x256
+Multiplicación con algoritmo Strassen tiempo de multiplicación 93110773 microsegundos frente a una matriz de tamaño 512x512
+Multiplicación con algoritmo Strassen tiempo de multiplicación 645230827 microsegundos frente a una matriz de tamaño 1024x1024
+Multiplicación con algoritmo Strassen tiempo de multiplicación 4605883581 microsegundos frente a una matriz de tamaño 2048x2048
