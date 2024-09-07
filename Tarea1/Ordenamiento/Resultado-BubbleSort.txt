@@ -1,3 +1,4 @@
 BubbleSort tiempo de ordenamiento 56627423 microsegundos frente a un arreglo de largo 100000
 BubbleSort tiempo de ordenamiento 360770462 microsegundos frente a un arreglo de largo 250000
 BubbleSort tiempo de ordenamiento 1445136981 microsegundos frente a un arreglo de largo 500000
+BubbleSort tiempo de ordenamiento 5764693393 microsegundos frente a un arreglo de largo 1000000

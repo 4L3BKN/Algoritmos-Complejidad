@@ -11,11 +11,12 @@ int main(){
     cout<<"Ingresar el nombre del archivo a leer:"<<endl;
     cin>> filename;
 
+    //Carga el vector desde un archivo de texto
     vector<int> numeros = loadDatasetFromFile(filename);
 
     int n = numeros.size();
     auto start = high_resolution_clock::now();
-    sort(numeros.begin(), numeros.end());
+    sort(numeros.begin(), numeros.end());//ordena los elementos del vector
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
 
@@ -29,7 +30,7 @@ int main(){
         return 1;
     }
 
-    resultado <<"Sort tiempo de ordenamiento " << duration.count() << " microsegundos frente a un arreglo de largo " << n << endl;
+    resultado <<"Sort tiempo de ordenamiento " << duration.count() << " microsegundos frente a un arreglo de largo " << n << endl;//Guarda el resultado de la ejecución
 
     resultado.close();
 

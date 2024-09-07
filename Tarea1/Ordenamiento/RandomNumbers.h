@@ -1,4 +1,4 @@
-#ifndef RANDOMNUMBERS_H // Directiva de preprocesador para evitar inclusiones múltiples
+#ifndef RANDOMNUMBERS_H 
 #define RANDOMNUMBERS_H
 
 #include <vector>
