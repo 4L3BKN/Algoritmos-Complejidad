@@ -28,7 +28,7 @@ vector<int> cargarLista(const string& nombreArchivo, int tamannio){
 }
 
 int indiceLetra(char c){
-    return c - 'A';
+    return c - 'a';
 }
 
 int costo_sub(char a, char b, vector<vector<int>>& matriz){
