@@ -3,6 +3,11 @@
 #include <iostream>
 #include <vector>
 
+extern vector<vector<int>> matrizSustitucion;
+extern vector<vector<int>> matrizTransposicion;
+extern vector<int> listaInsercion;
+extern vector<int> listaEliminacion;
+
 vector<vector<int>> cargarMatriz(const string& nombreArchivo, int tamannio){
     ifstream archivo(nombreArchivo);
     vector<vector<int>> matriz(tamannio, vector<int>(tamannio,0));
@@ -31,40 +36,40 @@ int indiceLetra(char c){
     return c - 'a';
 }
 
-int costo_sub(char a, char b, vector<vector<int>>& matriz){
+int costo_sub(char a, char b){
     int costo;
 
     int indiceA = indiceLetra(a);
     int indiceB = indiceLetra(b);
 
-    costo = matriz[indiceA][indiceB];
+    costo = matrizSustitucion[indiceA][indiceB];
     return costo;
 }
 
-int costo_ins(char a, vector<int>& lista){
+int costo_ins(char a){
     int costo;
 
     int indiceA = indiceLetra(a);
 
-    costo = lista[indiceA];
+    costo = listaInsercion[indiceA];
     return costo;
 }
 
-int costo_del(char a, vector<int>& lista){
+int costo_del(char a){
     int costo;
 
     int indiceA = indiceLetra(a);
 
-    costo = lista[indiceA];
+    costo = listaEliminacion[indiceA];
     return costo;
 }
 
-int costo_trans(char a, char b, vector<vector<int>>& matriz){
+int costo_trans(char a, char b){
     int costo;
 
     int indiceA = indiceLetra(a);
     int indiceB = indiceLetra(b);
 
-    costo = matriz[indiceA][indiceB];
+    costo = matrizTransposicion[indiceA][indiceB];
     return costo;
 }

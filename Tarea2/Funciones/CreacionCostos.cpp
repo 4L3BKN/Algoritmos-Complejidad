@@ -9,7 +9,7 @@ using namespace std;
 
 void crearInsercionTxt(){
     fstream archivo;
-    archivo.open("cost_insert.txt", ios::out);
+    archivo.open("../ArchivosEntrada/cost_insert.txt", ios::out);
 
     if (!archivo) {
         cerr << "Error al abrir el archivo cost_insert.txt\n";
@@ -27,7 +27,7 @@ void crearInsercionTxt(){
 
 void crearEliminacionTxt(){
     fstream archivo;
-    archivo.open("cost_delete.txt", ios::out);
+    archivo.open("../ArchivosEntrada/cost_delete.txt", ios::out);
 
     if (!archivo) {
         cerr << "Error al abrir el archivo cost_insert.txt\n";
@@ -39,13 +39,13 @@ void crearEliminacionTxt(){
     for(int i  = 0; i < tam; i++){
         archivo << rand() % 5 + 1 << " ";
     }
-    
+    cout<<tam<<endl;
     archivo.close();
 }
 
 void crearSustitucionTxt(){
     fstream archivo;
-    archivo.open("cost_replace.txt", ios::out);
+    archivo.open("../ArchivosEntrada/cost_replace.txt", ios::out);
 
     if (!archivo) {
         cerr << "Error al abrir el archivo cost_insert.txt\n";
@@ -55,7 +55,7 @@ void crearSustitucionTxt(){
     srand(static_cast<unsigned>(time(0)));
 
     for(int i = 0; i < tam; i++){
-        for(int j = 0; j < tam; i++){
+        for(int j = 0; j < tam; j++){
             archivo << rand() % 5 + 1 << " ";
         }
         archivo<<endl;
@@ -66,7 +66,7 @@ void crearSustitucionTxt(){
 
 void crearTransposicionTxt(){
     fstream archivo;
-    archivo.open("cost_transpose.txt", ios::out);
+    archivo.open("../ArchivosEntrada/cost_transpose.txt", ios::out);
 
     if (!archivo) {
         cerr << "Error al abrir el archivo cost_insert.txt\n";
@@ -76,7 +76,7 @@ void crearTransposicionTxt(){
     srand(static_cast<unsigned>(time(0)));
 
     for(int i = 0; i < tam; i++){
-        for(int j = 0; j < tam; i++){
+        for(int j = 0; j < tam; j++){
             archivo << rand() % 5 + 1 << " ";
         }
         archivo<<endl;
@@ -87,4 +87,7 @@ void crearTransposicionTxt(){
 
 int main(){
     crearEliminacionTxt();
+    crearInsercionTxt();
+    crearSustitucionTxt();
+    crearTransposicionTxt();
 }
