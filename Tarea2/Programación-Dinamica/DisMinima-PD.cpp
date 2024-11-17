@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include "funciones.h"
-
+#include <chrono>
 
 using namespace std;
 
@@ -92,8 +92,13 @@ int main(){
     }
     
     int respuesta = 0;
+    auto inicio = chrono::high_resolution_clock::now();
     respuesta = disMinimaPD(inicial, meta, inicial.length(), meta.length());
+    auto fin = chrono::high_resolution_clock::now();
+
+    auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
     cout<<"El costo minimo es:" << respuesta << endl;
+    cout<<"Se demoro:"<<duracion.count()<<" nanosegundos"<<endl;
 
     /*Descomentar en caso de querer ver la matriz de memoizacion resultante
     for(int i = 0; i<=n; i++){

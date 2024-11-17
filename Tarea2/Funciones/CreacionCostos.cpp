@@ -6,7 +6,8 @@
 using namespace std;
 
 #define tam 26
-#define seed 30 //Cambiar para generar diferentes valores en los archivos de texto.
+
+int seed; 
 
 void crearInsercionTxt(){
     fstream archivo;
@@ -41,7 +42,7 @@ void crearEliminacionTxt(){
         return;
     }
 
-    srand(seed);
+    srand(seed + 1);
 
     /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i  = 0; i < tam; i++){
@@ -65,7 +66,7 @@ void crearSustitucionTxt(){
         return;
     }
 
-    srand(seed);
+    srand(seed + 2);
     /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
@@ -97,7 +98,7 @@ void crearTransposicionTxt(){
         return;
     }
 
-    srand(seed);
+    srand(seed + 3);
     /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
@@ -117,6 +118,10 @@ void crearTransposicionTxt(){
 }
 
 int main(){
+
+    cout<<"Ingresar semilla para generar los archivos"<<endl;
+    cin>>seed;
+
     int eleccion;
     cout<<"Elegir que archivos crear"<<endl;
     cout<<"1)Insercion 2)Eliminacion 3)Sustitución 4)Transposición 5)Todos"<<endl;

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include "funciones.h"
-#include <algorithm>
+#include <chrono>
 
 using namespace std;
 
@@ -75,6 +75,11 @@ int main(){
     listaEliminacion = cargarLista("../ArchivosEntrada/cost_delete.txt", tam);
 
     int respuesta = 0;
+    auto inicio = chrono::high_resolution_clock::now();
     respuesta = disMinimaFB(inicial, meta, inicial.length(), meta.length());
+    auto fin = chrono::high_resolution_clock::now();
+
+    auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
     cout<<"El costo minimo es:" << respuesta << endl;
+    cout<<"Se demoro:"<<duracion.count()<<" nanosegundos"<<endl;
 }
