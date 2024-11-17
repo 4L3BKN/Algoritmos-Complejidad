@@ -6,6 +6,7 @@
 using namespace std;
 
 #define tam 26
+#define seed 30 //Cambiar para generar diferentes valores en los archivos de texto.
 
 void crearInsercionTxt(){
     fstream archivo;
@@ -16,15 +17,17 @@ void crearInsercionTxt(){
         return;
     }
 
-    srand(static_cast<unsigned>(time(0)));
+    srand(seed);
 
+    /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i  = 0; i < tam; i++){
         archivo <<1<< " ";
     }
+    */
 
-    /*for(int i = 0; i < tam; i++){
+    for(int i = 0; i < tam; i++){
         archivo << rand() % 5 + 1 << " ";
-    }*/
+    }
 
     archivo.close();
 }
@@ -38,15 +41,18 @@ void crearEliminacionTxt(){
         return;
     }
 
-    srand(static_cast<unsigned>(time(0)));
+    srand(seed);
 
+    /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i  = 0; i < tam; i++){
         archivo <<1<< " ";
     }
-    /*for(int i  = 0; i < tam; i++){
+    */
+
+    for(int i  = 0; i < tam; i++){
         archivo << rand() % 5 + 1 << " ";
-    }*/
-    cout<<tam<<endl;
+    }
+
     archivo.close();
 }
 
@@ -59,7 +65,8 @@ void crearSustitucionTxt(){
         return;
     }
 
-    srand(static_cast<unsigned>(time(0)));
+    srand(seed);
+    /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
             if(i == j){
@@ -70,12 +77,13 @@ void crearSustitucionTxt(){
         }
         archivo<<endl;
     }
-    /*for(int i = 0; i < tam; i++){
+    */
+    for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
             archivo << rand() % 5 + 1 << " ";
         }
         archivo<<endl;
-    }*/
+    }
 
     archivo.close();
 }
@@ -89,27 +97,46 @@ void crearTransposicionTxt(){
         return;
     }
 
-    srand(static_cast<unsigned>(time(0)));
-
+    srand(seed);
+    /*Quitar comentarios para hacer una matriz con numeros constantes, hay que comentar el for de más abajo.
     for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
             archivo << 1 <<" ";
         }
         archivo<<endl;
     }
-    /*for(int i = 0; i < tam; i++){
+    */
+    for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
             archivo << rand() % 5 + 1 << " ";
         }
         archivo<<endl;
-    }*/
+    }
 
     archivo.close();
 }
 
 int main(){
-    crearEliminacionTxt();
-    crearInsercionTxt();
-    crearSustitucionTxt();
-    crearTransposicionTxt();
+    int eleccion;
+    cout<<"Elegir que archivos crear"<<endl;
+    cout<<"1)Insercion 2)Eliminacion 3)Sustitución 4)Transposición 5)Todos"<<endl;
+    cin>>eleccion;
+
+    if(eleccion == 1){
+        crearInsercionTxt();
+    }else if(eleccion == 2){
+        crearEliminacionTxt();
+    }else if(eleccion == 3){
+        crearSustitucionTxt();
+    }else if(eleccion == 4){
+        crearTransposicionTxt();
+    }else if(eleccion == 5){
+        crearEliminacionTxt();
+        crearInsercionTxt();
+        crearSustitucionTxt();
+        crearTransposicionTxt();
+    }else{
+        cout<<"Esa no era una opción posible"<<endl;
+    }
+    
 }
