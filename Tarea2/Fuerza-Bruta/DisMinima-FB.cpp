@@ -15,6 +15,8 @@ vector<int> listaInsercion;
 vector<int> listaEliminacion;
 
 int disMinimaFB(const string& palabraInicial, const string& palabraMeta,int i, int j){
+    
+    if(i == 0 && j == 0) return 0;
     if(i == 0){
         int costo = 0;
         for(int k = 0; k < j; k++){
@@ -30,14 +32,24 @@ int disMinimaFB(const string& palabraInicial, const string& palabraMeta,int i, i
         return costo;
     }
 
-    if(palabraInicial[i -1] == palabraMeta[j - 1]){
+    if(palabraInicial[i - 1] == palabraMeta[j - 1]){
         return disMinimaFB(palabraInicial, palabraMeta, i - 1, j - 1);
     }
-    int costoInsercion = costo_ins(palabraMeta[j]) + disMinimaFB(palabraInicial, palabraMeta, i, j - 1);
-    int costoEliminacion = costo_del(palabraInicial[i]) + disMinimaFB(palabraInicial, palabraMeta, i - 1, j);
-    int costoSustitucion = costo_sub(palabraInicial[i], palabraMeta[j]) + disMinimaFB(palabraInicial, palabraMeta, i - 1, j - 1);
+    int costoInsercion = costo_ins(palabraMeta[j - 1]) + disMinimaFB(palabraInicial, palabraMeta, i, j - 1);
+    int costoEliminacion = costo_del(palabraInicial[i - 1]) + disMinimaFB(palabraInicial, palabraMeta, i - 1, j);
+    int costoSustitucion = costo_sub(palabraInicial[i - 1], palabraMeta[j - 1]) + disMinimaFB(palabraInicial, palabraMeta, i - 1, j - 1);
 
-    return min( costoInsercion, min(costoEliminacion, costoSustitucion));
+    int res = min( costoInsercion, min(costoEliminacion, costoSustitucion));
+
+    if (i > 1 && j > 1 && palabraInicial[i - 1] == palabraMeta[j - 2] && palabraInicial[i - 2] == palabraMeta[j - 1]) {
+        int costoTrans1 = costo_trans(palabraInicial[i - 1], palabraInicial[i - 2]) + disMinimaFB(palabraInicial, palabraMeta, i - 2, j - 2);
+        int costoTrans2 = costo_trans(palabraInicial[i - 2], palabraInicial[i - 1]) + disMinimaFB(palabraInicial, palabraMeta, i - 2, j - 2);
+        int comparar = min(costoTrans1, costoTrans2);
+
+        res = min(res, comparar);
+    }
+
+    return res;
 }
    
 int main(){
@@ -61,6 +73,7 @@ int main(){
     matrizTransposicion = cargarMatriz("../ArchivosEntrada/cost_transpose.txt", tam);
     listaInsercion = cargarLista("../ArchivosEntrada/cost_insert.txt", tam);
     listaEliminacion = cargarLista("../ArchivosEntrada/cost_delete.txt", tam);
+
     int respuesta = 0;
     respuesta = disMinimaFB(inicial, meta, inicial.length(), meta.length());
     cout<<"El costo minimo es:" << respuesta << endl;

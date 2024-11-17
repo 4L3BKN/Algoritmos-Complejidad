@@ -18,9 +18,13 @@ void crearInsercionTxt(){
 
     srand(static_cast<unsigned>(time(0)));
 
-    for(int i = 0; i < tam; i++){
-        archivo << rand() % 5 + 1 << " ";
+    for(int i  = 0; i < tam; i++){
+        archivo <<1<< " ";
     }
+
+    /*for(int i = 0; i < tam; i++){
+        archivo << rand() % 5 + 1 << " ";
+    }*/
 
     archivo.close();
 }
@@ -37,8 +41,11 @@ void crearEliminacionTxt(){
     srand(static_cast<unsigned>(time(0)));
 
     for(int i  = 0; i < tam; i++){
-        archivo << rand() % 5 + 1 << " ";
+        archivo <<1<< " ";
     }
+    /*for(int i  = 0; i < tam; i++){
+        archivo << rand() % 5 + 1 << " ";
+    }*/
     cout<<tam<<endl;
     archivo.close();
 }
@@ -53,13 +60,22 @@ void crearSustitucionTxt(){
     }
 
     srand(static_cast<unsigned>(time(0)));
-
     for(int i = 0; i < tam; i++){
+        for(int j = 0; j < tam; j++){
+            if(i == j){
+                archivo<<0<<" ";
+            }else{
+                archivo<<2<<" ";
+            }
+        }
+        archivo<<endl;
+    }
+    /*for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
             archivo << rand() % 5 + 1 << " ";
         }
         archivo<<endl;
-    }
+    }*/
 
     archivo.close();
 }
@@ -77,10 +93,16 @@ void crearTransposicionTxt(){
 
     for(int i = 0; i < tam; i++){
         for(int j = 0; j < tam; j++){
-            archivo << rand() % 5 + 1 << " ";
+            archivo << 1 <<" ";
         }
         archivo<<endl;
     }
+    /*for(int i = 0; i < tam; i++){
+        for(int j = 0; j < tam; j++){
+            archivo << rand() % 5 + 1 << " ";
+        }
+        archivo<<endl;
+    }*/
 
     archivo.close();
 }
